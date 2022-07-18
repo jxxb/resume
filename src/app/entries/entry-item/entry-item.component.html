@@ -1,0 +1,17 @@
+<a style="cursor: pointer;"
+[routerLink]="entry?.id"
+routerLinkActive="active"
+class="list-group-item clearfix">
+   <div class="pull-left">
+      <h4 class="list-group-item-heading">{{ entry?.title }}</h4>
+   </div>
+   <span class="pull-right">
+      <img 
+      [src]="entry?.imageUrl" 
+      alt="{{entry?.title}}" 
+      class="img-responsive" 
+      style="max-height: 50px;"
+      *ngIf="entry?.imageUrl"
+      >
+   </span>
+</a>   
