@@ -1,1 +1,144 @@
-<p>entry-edit works!</p>
+<div class="panel panel-default">
+   <div class="panel-body">
+     <form id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+       
+       <div class="row">
+         <div class="col-sm-12 form-group">
+           <label for="name">Title:</label>
+           <input
+             type="text"
+             id="title"
+             class="form-control required"
+             name="title"
+             size="120"
+             max="120"
+             [ngModel]="entry?.title"
+             required
+             #title="ngModel"
+             >
+         </div>
+       </div>
+       <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="company">Company:</label>
+          <input
+            type="text"
+            id="company"
+            class="form-control invalid"
+            name="company"
+            size="150"
+            max="255"
+            [ngModel]="entry?.company"
+            required
+            #company="ngModel"
+            >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="date">Date:</label>
+          <input
+            type="text"
+            id="date"
+            class="form-control invalid"
+            name="date"
+            size="150"
+            max="255"
+            [ngModel]="entry?.date"
+            required
+            #date="ngModel"
+            >
+        </div>
+      </div>
+       <div class="row">
+         <div class="col-sm-12 form-group">
+           <label for="location">Location:</label>
+           <input
+             type="text"
+             id="location"
+             class="form-control required"
+             name="location"
+             size="120"
+             max="255"
+             [ngModel]="entry?.location"
+             required
+             #location="ngModel"
+             >
+         </div>
+       </div>
+       <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="category">Category:</label>
+          <input
+            type="text"
+            id="category"
+            class="form-control"
+            name="category"
+            size="150"
+            max="255"
+            [ngModel]="entry?.category"
+            required
+            #category="ngModel"
+            >
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="imageUrl">Image URL:</label>
+          <input
+            type="text"
+            id="imageUrl"
+            class="form-control"
+            name="imageUrl"
+            size="150"
+            max="255"
+            [ngModel]="entry?.imageUrl"
+            #imageUrl="ngModel"
+            >
+        </div>
+      </div>
+       <div class="row">
+         <div class="col-sm-12 form-group">
+           <label for="link">link:</label>
+           <input
+             type="text"
+             id="link"
+             class="form-control"
+             name="link"
+             size="150"
+             max="255"
+             [ngModel]="entry?.link"
+             
+             #link="ngModel"
+             >
+         </div>
+       </div>
+       <div class="row">
+         <div class="form-group">
+           <label for="actions">Actions</label>
+           <input
+           type="text"
+           id="actions"
+           class="form-control"
+           name="actions"
+           size="150"
+           max="255"
+           [ngModel]="entry?.actions"
+           required
+           #actions="ngModel"
+           >
+        </div>
+        </div>
+         
+        
+     <div class="alert alert-danger" *ngIf="(title.touched && title.invalid) || (date.touched && date.invalid)">The Entry title and date are required fields</div>
+       <div class="row">
+         <div class="col-xs-12 btn-toolbar">
+           <button class="btn btn-success" type="submit" [disabled]="!f.valid"> 
+             {{editMode ? 'Update' : 'Save'}}</button>
+           <button class="btn btn-primary" (click)="onCancel()" type="button">Cancel</button>
+         </div>
+       </div>
+     </form>
+   </div>
+ </div>

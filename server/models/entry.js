@@ -7,9 +7,9 @@ company: {type: String, required:true},
 date: {type: String, required:true},
 location: {type: String, required:true},
 category: {type: String, required:true},
-action: {type: String, required:true},
 imageUrl: {type: String, required:false},
 link: {type: String, required:false},
+actions: {type: String, required:true},
 })
 
 module.exports = mongoose.model('Entry',entrySchema);

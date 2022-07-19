@@ -62,7 +62,7 @@ app.use('/', index);
 
 // ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE ...
 app.use('/entries', entryRoutes);
-// app.use('/infos', infoRoutes);
+app.use('/infos', infoRoutes);
 
 
 // Tell express to map all other non-defined routes back to the index page

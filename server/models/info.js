@@ -1,31 +1,17 @@
-// export class Info {
-//    constructor(
-//       public id: string,
-//       public name: string,
-//       public phone: string,
-//       public email: string,
-//       public major: string,
-//       public minor: string,
-//       public certificate: string,
-//       public cluster: string,
-//       public gpa: string,
-//       public school: string,
-//       public gradation: string,
-//       public imageUrl: string,
-//       public link: string,
-//    ){}
-// }
-
 const mongoose = require('mongoose');
 
 const infoSchema = mongoose.Schema({
 id: {type: String, required:true},
-title: {type: String, required:true},
-company: {type: String, required:true},
-date: {type: String, required:true},
-location: {type: String, required:true},
-category: {type: String, required:true},
-action: {type: String, required:true},
+name: {type: String, required:true},
+phone: {type: String, required:true},
+email: {type: String, required:true},
+major: {type: String, required:true},
+minor: {type: String, required:false},
+certificate: {type: String, required:false},
+cluster: {type: String, required:false},
+gpa: {type: String, required:false},
+school: {type: String, required:false},
+graduation: {type: String, required:false},
 imageUrl: {type: String, required:false},
 link: {type: String, required:false},
 })

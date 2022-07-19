@@ -5,7 +5,7 @@ import { EntryService } from '../entry.service';
 @Component({
   selector: 'resume-entry-item',
   templateUrl: './entry-item.component.html',
-  styleUrls: ['./entry-item.component.css']
+  styleUrls: ['./entry-item.component.css'],
 })
 export class EntryItemComponent implements OnInit {
   @Input() entry:Entry;

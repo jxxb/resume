@@ -11,7 +11,7 @@ import { EntryListComponent } from './entries/entry-list/entry-list.component';
 import { InfoComponent } from './info/info.component';
 import { HeaderComponent } from './header.component';
 import { DndModule } from 'ng2-dnd';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntriesFilterPipe } from './entries/entries-filter.pipe';
 
 @NgModule({
@@ -31,6 +31,7 @@ import { EntriesFilterPipe } from './entries/entries-filter.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     DndModule.forRoot(),
   ],
   providers: [],

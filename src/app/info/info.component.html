@@ -1,1 +1,28 @@
-<p>info works!</p>
+<div class="row">
+   <div class="col-xs-12">
+     <div class="panel panel-default">
+       <div class="panel-heading clearfix">
+         <h2>{{info?.name}}</h2>
+         <div class="pull-left">
+           <img [src]="info?.imageUrl" alt="{{info?.name}}" class="img-responsive">
+         </div>
+         <div class="pull-right toolbar">
+           <!-- <button class="btn btn-primary dropdown-toggle" (click)="onEdit()">Edit
+           </button>
+           <button class="btn btn-danger dropdown-toggle" (click)="onDelete()">Delete
+           </button> -->
+         </div>
+       </div>
+     
+     <div class="panel-body">
+       <div class="list-group-item-heading">
+         <b>{{info?.major}}</b>
+       </div>
+    
+     <div class="list-group-item-heading">
+       {{info?.minor}}
+     </div>
+   </div> 
+ </div>
+ </div>
+ </div>,

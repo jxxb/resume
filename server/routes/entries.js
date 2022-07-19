@@ -12,12 +12,12 @@ router.get('/',(req,res,next) => {
          entries: entries
       });
    })
-   // .catch(error => {
-   //    res.status(500).json({
-   //       message: 'An error occurred',
-   //       error: error
-   //    });
-   // });
+   .catch(error => {
+      res.status(500).json({
+         message: 'An error occurred',
+         error: error
+      });
+   });
 });
 
 router.get('/:id',(req,res,next) => {
@@ -41,24 +41,25 @@ router.get('/:id',(req,res,next) => {
 
 router.post('/', (req,res,next)=>{
    const newEntryId=SequenceGenerator.nextId("entries");
-   const entry = new entry({
+   const entry = new Entry({
       id: newEntryId,
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
+      title: req.body.title,
+      company: req.body.company,
+      date: req.body.date,
+      location: req.body.location,
+      category: req.body.category,
       imageUrl: req.body.imageUrl,
-      group: req.body.group
+      link: req.body.link,
+      actions: req.body.actions
    });
-
    entry
    .save()
    .then((createdEntry)=>{
       res.status(201)
       .json({
-         message: 'entry added successfully!',
+         message: 'Entry added successfully!',
          entry:createdEntry
       });
-
    }) 
    .catch(error=>{
       res.status(500).json({
@@ -69,13 +70,16 @@ router.post('/', (req,res,next)=>{
 })
 
 router.put('/:id', (req, res, next) => {
-   entry.findOne({ id: req.params.id })
+   Entry.findOne({ id: req.params.id })
    .then(entry => {
-      entry.name = req.body.name;
-      entry.email = req.body.email;
-      entry.phone = req.body.phone;
+      entry.title = req.body.title;
+      entry.company = req.body.company;
+      entry.date = req.body.date;
+      entry.location = req.body.location;
+      entry.category = req.body.category;
       entry.imageUrl = req.body.imageUrl;
-      entry.group = req.body.group;
+      entry.link = req.body.link;
+      entry.actions = req.body.actions
 
       Entry.updateOne({ id: req.params.id }, entry)
          .then(result => {
@@ -83,12 +87,12 @@ router.put('/:id', (req, res, next) => {
             message: 'entry updated successfully'
          })
          })
-         .catch(error => {
-            res.status(500).json({
-            message: 'An error occurred',
-            error: error
-         });
-         });
+         // .catch(error => {
+         //    res.status(500).json({
+         //    message: 'An error occurred',
+         //    error: error
+         // });
+         // });
    })
    .catch(error => {
          res.status(500).json({

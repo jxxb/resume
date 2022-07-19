@@ -16,7 +16,7 @@ export class EntryListComponent implements OnInit {
   constructor(private EntryService: EntryService) { }
 
   ngOnInit(): void {
-    this.EntryService.entryChangedEvent
+    this.subscription = this.EntryService.entryChangedEvent
     .subscribe(
       (entries:Entry[]) => {
         this.entries = entries;

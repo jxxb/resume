@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EntriesComponent } from './entries/entries.component';
 import { EntryDetailComponent } from './entries/entry-detail/entry-detail.component';
 import { EntryEditComponent } from './entries/entry-edit/entry-edit.component';
+import { InfoComponent } from './info/info.component';
 
 const routes: Routes = [
 
@@ -13,7 +14,7 @@ const routes: Routes = [
     {path: ':id',component:EntryDetailComponent},
     {path: ':id/edit',component:EntryEditComponent},
   ]},
-  {path: 'info',component:EntriesComponent},
+  {path: 'infos',component:InfoComponent},
 
 ];
 
